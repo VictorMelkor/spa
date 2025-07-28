@@ -18,11 +18,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&family=Open+Sans:wght@400;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <title>Calmaria Spa</title>
 </head>
 
 <body>
-
     <header class="cabecalho">
         <nav class="cabecalho__nav">
             <a aria-label="Acessar a página Calmaria Spa" href="#">
@@ -30,7 +31,21 @@
             </a>
             <span class="cabecalho__nav--line"></span>
             <ul class="cabecalho__nav--lista">
-                <li class="cabecalho__lista-item"><a href="#">Espaço</a></li>
+                <li class="cabecalho__lista-item"><a href="#">Início</a></li>
+                <li class="cabecalho__lista-item">
+                    <!-- Adiciona aria-haspopup para indicar que este item tem um submenu -->
+                    <!-- Adiciona aria-expanded para indicar se o submenu está aberto ou fechado -->
+                    <a href="#" aria-haspopup="true" aria-expanded="false">Nosso espaço</a>
+                    <span class="material-symbols-outlined icone" aria-hidden="true">stat_minus_1</span>
+                    <!-- Submenu de primeiro nível -->
+                    <ul class="submenu">
+                        <li>
+                            <a href="/quem-somos.html">Nossa história</a>
+                        </li>
+                        <li><a href="#">Localização</a></li>
+                        <li><a href="#">Equipe</a></li>
+                    </ul>
+                </li>
                 <li class="cabecalho__lista-item"><a href="#">Serviços</a></li>
                 <li class="cabecalho__lista-item"><a href="#">Contato</a></li>
             </ul>
@@ -56,7 +71,8 @@
                     <h2 class="container__secao--conteudo--textos-titulo">Tecnologia e natureza no seu relaxamento</h2>
                     <p class="container__secao--conteudo--textos-infos">Equipamentos de ponta, produtos certificados e
                         uma equipe qualificada te ajudam a se livrar do stress com equilíbrio e tranquilidade.</p>
-                    <object tabindex="-1" data="./assets/separador-direita.svg" type="image/svg+xml" aria-hidden="true"></object>
+                    <object tabindex="-1" data="./assets/separador-direita.svg" type="image/svg+xml"
+                        aria-hidden="true"></object>
                 </div>
             </article>
             <article class="container__secao--conteudo">
@@ -64,7 +80,8 @@
                     <h2 class="container__secao--conteudo--textos-titulo">Elevando o seu bem-estar</h2>
                     <p class="container__secao--conteudo--textos-infos">Cada visita é uma jornada. Não importa a sua
                         rotina, aqui você encontra seu paraíso particular.</p>
-                    <object tabindex="-1" data="./assets/separador-esquerda.svg" type="image/svg+xml" aria-hidden="true"></object>
+                    <object tabindex="-1" data="./assets/separador-esquerda.svg" type="image/svg+xml"
+                        aria-hidden="true"></object>
                 </div>
                 <div>
                     <img class="container__secao--conteudo--img2" src="./assets/espaco-2.png"
@@ -155,8 +172,8 @@
                         </div>
                     </fieldset>
                     <label for="mensagem">Mensagem</label>
-                    <textarea id="mensagem" name="mensagem" type="text" placeholder="Escreva sua mensagem"
-                        required maxlength="500"></textarea>
+                    <textarea id="mensagem" name="mensagem" type="text" placeholder="Escreva sua mensagem" required
+                        maxlength="500"></textarea>
                 </div>
                 <button>Enviar</button>
             </form>
@@ -175,6 +192,7 @@
         </address>
     </footer>
 
+    <script src="main.js"></script>
 </body>
 
 </html>
