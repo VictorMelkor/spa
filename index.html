@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./styles/container--cards.css">
     <link rel="stylesheet" href="./styles/container--inscricao.css">
     <link rel="stylesheet" href="./styles//container--contato.css">
+    <link rel="stylesheet" href="./styles/modal.css">
     <link rel="stylesheet" href="./styles/rodape.css">
     <link rel="shortcut icon" href="./assets/Favicon.svg" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,9 +128,27 @@
                     novidades sobre nossos serviços.</p>
                 <div class="container__incricao--form-input">
                     <input id="inscricao" name="inscricao" type="email" placeholder="Digite seu email">
-                    <button type="submit">Inscrever</button>
+                    <button type="submit" onclick="alternarModal('ver-modal-inscrito', true)">Inscrever</button>
                 </div>
             </article>
+
+            <!-- Modal de formulário inscrito com sucesso -->
+            <div id="ver-modal-inscrito" class="modal-enviado" role="dialog"
+                aria-labelledby="cabecalho-titulo-modal-enviado" aria-modal="true">
+                <div class="conteudo-modal-enviado">
+                    <div class="cabecalho-modal-enviado">
+                        <h2 id="cabecalho-titulo-modal-enviado" class="cabecalho-titulo-modal-enviado">
+                            Você foi inscrito com sucesso!
+                        </h2>
+                        <img class="cabecalho-icone-modal-enviado" src="./assets/icon-enviado.png" alt="" />
+                        <!-- Botão para fechar a janela modal 'ver-modal-inscrito -->
+                        <button class="btn-fechar" onclick="alternarModal('ver-modal-inscrito', false)" tabindex="0" aria-label="Fechar formulário enviado">
+                            Fechar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <img class="container__incricao--mobile" src="./assets/mandala-inferior-mobile.svg" alt="">
             <img class="container__incricao--tablet" src="./assets/mandala-direita-tablet.svg" alt="">
         </section>

@@ -71,10 +71,12 @@
     padding: 1.6rem;
     border: none;
     font-size: 1.5rem;
+    font-family: var(--fonte);
 }
 
 .container__contato .container__contato--form .container__contato--inputs textarea {
     height: 7rem;
+    font-family: var(--fonte);
 }
 
 .container__contato .container__contato--form .container__contato--inputs .container__contato--inputs--div {
@@ -99,6 +101,9 @@
     background: var(--lilas-escuro);
     transition: 0.5s ease;
 }
+
+
+
 
 @media screen and (min-width: 768px) {
 
