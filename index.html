@@ -142,7 +142,8 @@
                         </h2>
                         <img class="cabecalho-icone-modal-enviado" src="./assets/icon-enviado.png" alt="" />
                         <!-- Botão para fechar a janela modal 'ver-modal-inscrito -->
-                        <button class="btn-fechar" onclick="alternarModal('ver-modal-inscrito', false)" tabindex="0" aria-label="Fechar formulário enviado">
+                        <button class="btn-fechar" onclick="alternarModal('ver-modal-inscrito', false)" tabindex="0"
+                            aria-label="Fechar formulário enviado">
                             Fechar
                         </button>
                     </div>
@@ -152,52 +153,171 @@
             <img class="container__incricao--mobile" src="./assets/mandala-inferior-mobile.svg" alt="">
             <img class="container__incricao--tablet" src="./assets/mandala-direita-tablet.svg" alt="">
         </section>
+    </main>
 
-        <section class="container__contato">
-            <article class="container__contato--img">
-                <img src="./assets/contato-img-1.png" alt="Homem em uma banheira com produtos de spa no rosto">
-                <img src="./assets/contato-img-2.png" alt="Mulher em uma banheira olhando o horizonte na janela">
-                <img src="./assets/contato-img-3.png"
-                    alt="Mulher em uma banheira com pétalas de rosa, com apenas mãos e pernas aparentes, segurando um livro com uma bandeija com uvas e chá">
-            </article>
-            <form action="." class="container__contato--form">
-                <div class="container__contato--form-conteudo">
-                    <h5 id="titulo-contato" class="container__contato--form-conteudo-titulo">Entre em contato</h5>
-                    <p class="container__contato--form-conteudo-texto">Reserve seu horário, tire dúvidas ou proponha
-                        sugestões, nosso canal é aberto para você!</p>
+    <section id="contato" role="region" aria-label="Seção de Contato">
+        <div class="imgs-contato">
+            <img src="./assets/contato-img-1.png" alt="Homem em uma banheira com produtos de spa no rosto">
+            <img src="./assets/contato-img-2.png" alt="Mulher em uma banheira olhando o horizonte na janela">
+            <img src="./assets/contato-img-3.png"
+                alt="Mulher em uma banheira com pétalas de rosa, com apenas mãos e pernas aparentes, segurando um livro com uma bandeija com uvas e chá">
+        </div>
+
+        <div class="textos">
+            <h2 class="titulo">Converse com a gente!</h2>
+            <p class="infos">
+                Reserve seu horário, tire dúvidas e proponha sugestões!
+            </p>
+            <button class="btn-contato" onclick="alternarModal('ver-modal-contato', true)" aria-label="Clique para Entrar em contato">
+                Entrar em contato
+            </button>
+        </div>
+
+        <!-- Modal -->
+        <!-- Janela modal 'ver-modal-contato' -->
+        <section id="ver-modal-contato" class="modal" role="dialog" aria-labelledby="cabecalho-titulo-modal"
+            aria-modal="true">
+            <div class="conteudo-modal">
+                <div class="cabecalho-modal">
+                    <h2 id="cabecalho-titulo-modal" class="cabecalho-titulo-modal">
+                        Preencha seus dados:
+                    </h2>
+                    <!-- Botão para fechar a janela modal 'ver-modal-contato' -->
+                    <button class="cabecalho-modal-fechar" onclick="alternarModal('ver-modal-contato', false)" aria-label="Botão para fechar o formulário" tabindex="0">
+                        <span aria-hidden="true">×</span>
+                    </button>
                 </div>
-                <div class="container__contato--inputs">
+
+                <div class="inputs-modal">
+                    <p class="paragrafo-modal">
+                        Quer marcar horário, enviar críticas ou sugestões? Preencha os
+                        campos abaixo e deixe sua mensagem, que retornaremos em até 12h!
+                    </p>
+
                     <label for="nome">Nome</label>
-                    <input id="nome" name="nome" type="text" placeholder="Digite seu nome completo" required>
+                    <input type="text" name="nome" id="nome" required placeholder="Digite seu nome completo"
+                        aria-describedby="instrucoes-nome" />
+
                     <label for="email">Email</label>
-                    <input id="email" name="email" type="email" placeholder="Digite seu email" required>
+                    <input type="email" name="email" id="email" required placeholder="Digite seu e-mail"
+                        aria-describedby="instrucoes-email" />
+
                     <label for="telefone">Telefone</label>
-                    <input id="telefone" name="telefone" type="text" placeholder="(XX) XXXX-XXXX" required>
-                    <fieldset aria-labelledby="titulo-contato">
-                        <legend class="container__contato--inputs--titulo">Prefere contato por:</legend>
-                        <div class="container__contato--inputs--div">
+                    <input type="tel" name="telefone" id="telefone" required placeholder="(DDD) XXXXX-XXXX"
+                        aria-describedby="instrucoes-telefone" />
+
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" required placeholder="Escreva sua mensagem"
+                        aria-describedby="instrucoes-mensagem"></textarea>
+
+                    <fieldset class="field-legend" aria-labelledby="tituloContato">
+                        <legend>Prefere contato por:</legend>
+                        <div class="inputs-modal-radio">
                             <div>
-                                <input type="radio" id="ligacao" name="contato">
-                                <label for="ligacao">Ligação</label>
+                                <input id="ligacao" type="radio" name="contato" required value="Ligação" role="radio"
+                                    aria-labelledby="ligacao-label" />
+                                <label class="inputs-modal-label" id="ligacao-label" for="ligacao">Ligação</label>
                             </div>
                             <div>
-                                <input type="radio" id="whatsapp" name="contato">
-                                <label for="whatsapp">WhatsApp</label>
+                                <input id="whatsapp" type="radio" name="contato" required value="Whatsapp" role="radio"
+                                    aria-labelledby="whatsapp-label" />
+                                <label class="inputs-modal-label" id="whatsapp-label" for="whatsapp">WhatsApp</label>
                             </div>
                             <div>
-                                <input type="radio" id="email-contato" name="contato">
-                                <label for="email-contato">Email</label>
+                                <input id="email-contato" type="radio" name="contato" required value="Email"
+                                    role="radio" aria-labelledby="email-contato-label" />
+                                <label class="inputs-modal-label" id="email-contato-label"
+                                    for="email-contato">Email</label>
                             </div>
                         </div>
                     </fieldset>
-                    <label for="mensagem">Mensagem</label>
-                    <textarea id="mensagem" name="mensagem" type="text" placeholder="Escreva sua mensagem" required
-                        maxlength="500"></textarea>
                 </div>
-                <button>Enviar</button>
-            </form>
+
+                <div class="rodape-modal">
+                    <!-- Botão para fechar a janela modal 'ver-modal-contato' -->
+                    <button class="btn-enviar" tabindex="0">
+                        Enviar
+                    </button>
+                </div>
+            </div>
         </section>
-    </main>
+
+        <!-- Modal de formulário enviado contato -->
+        <section id="ver-modal-enviado" class="modal-enviado" role="dialog"
+            aria-labelledby="cabecalho-titulo-modal-enviado" aria-modal="true">
+            <div class="conteudo-modal-enviado">
+                <div class="cabecalho-modal-enviado">
+                    <h2 id="cabecalho-titulo-modal-enviado" class="cabecalho-titulo-modal-enviado">
+                        Mensagem enviada com sucesso!
+                    </h2>
+                    <img class="cabecalho-icone-modal-enviado" src="./assets/icon-enviado.png" alt="" />
+                    <!-- Botão para fechar a janela modal 'ver-modal-enviado' contato-->
+                    <button class="btn-fechar" tabindex="0" aria-label="Fechar formulário enviado">
+                        Fechar
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Acordeao -->
+        <div class="acordeao">
+            <div class="acordeao-item" id="item1">
+                <button class="botao-acordeao" aria-expanded="false">
+                    É necessário agendar com antecedência os tratamentos no spa?
+                    <span class="material-symbols-outlined icone" aria-hidden="true">
+                        arrow_drop_down
+                    </span>
+                </button>
+                <div class="conteudo-acordeao" aria-hidden="true">
+                    <div>
+                        <p>
+                            Recomendamos agendar com antecedência para garantir horário, mas
+                            estamos abertos a atendimentos de última hora, sujeitos à
+                            disponibilidade de agenda.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="acordeao-item" id="item2">
+                <button class="botao-acordeao" aria-expanded="false">
+                    Crianças também são bem-vindas?
+                    <span class="material-symbols-outlined icone" aria-hidden="true">
+                        arrow_drop_down
+                    </span>
+                </button>
+                <div class="conteudo-acordeao" aria-hidden="true">
+                    <div>
+                        <p>
+                            Embora a maioria dos tratamentos seja projetada para adultos,
+                            oferecemos opções adaptadas para crianças em alguns serviços.
+                            Certifique-se de verificar nossa oferta específica para os
+                            pequenos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="acordeao-item" id="item3">
+                <button class="botao-acordeao" aria-expanded="false">
+                    Qual é a política de cancelamento dos tratamentos no spa?
+                    <span class="material-symbols-outlined icone" aria-hidden="true">
+                        arrow_drop_down
+                    </span>
+                </button>
+                <div class="conteudo-acordeao" aria-hidden="true">
+                    <div>
+                        <p>
+                            Pedimos que nos avise com pelo menos 24 horas de antecedência
+                            para cancelamentos. Isso nos permite ajustar nossa programação e
+                            oferecer aos outros clientes a oportunidade de agendar nesse
+                            horário.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
 
     <footer class="rodape">
         <address>
