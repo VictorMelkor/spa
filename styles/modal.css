@@ -462,6 +462,7 @@ footer {
     transform: rotate(180deg);
 }
 
+
 .conteudo-acordeao.expandido {
     max-height: 250px;
 }
@@ -501,5 +502,4 @@ footer {
     .conteudo-acordeao div {
         font-size: 2.2rem;
     }
-}
 }
